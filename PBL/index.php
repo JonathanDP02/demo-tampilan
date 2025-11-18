@@ -9,31 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo" class="img-logo">
-        </div>
-
-        <nav class="nav-pill">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#" class="btn-gallery">Gallery</a></li>
-            </ul>
-        </nav>
-
-        <div class="header-action">
-            <a href="#" class="btn-form">
-                <span>Form</span>
-                <div class="circle-icon">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </a>
-        </div>
-    </header>
+    <?php include 'header.php'; ?>
 
     <section class="hero">
         <div class="hero-content">
@@ -53,7 +29,7 @@
                     </div>
                 </a>
                 <a href="#" class="btn-hero">
-                     <span class="placeholder-text"></span>
+                    <span class="placeholder-text"></span>
                     <div class="circle-icon">
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
@@ -64,7 +40,7 @@
 
     <section class="stats-section">
         <div class="stats-container">
-            
+
             <div class="stat-row row-left">
                 <div class="stat-item">
                     <img src="gambar_viewers.png" alt="Viewers" class="stat-img">
@@ -89,8 +65,6 @@
         </div>
     </section>
 
-    </section>
-
     <section class="portfolio-section">
         <div class="portfolio-container">
 
@@ -98,7 +72,7 @@
                 <a href="#" class="card-button-decorator button-left">
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
-                
+
                 <div class="card-image-wrapper">
                     <img src="img/viat-map.png" alt="Viat Map Logo">
                 </div>
@@ -125,14 +99,12 @@
         </div>
     </section>
 
-    </section>
-
     <section class="news-section">
-        
+
         <h2 class="news-heading gradient-text">News</h2>
 
         <div class="news-container">
-            
+
 
             <div class="news-card-border">
                 <div class="news-card">
@@ -146,7 +118,8 @@
                 </div>
             </div>
 
-            <div class="news-card-wrapper"> <div class="news-card-border">
+            <div class="news-card-wrapper">
+                <div class="news-card-border">
                     <div class="news-card">
                         <img src="img/news 2.png" alt="Monthly Research Discussion" class="news-card-img">
                         <div class="news-card-content">
@@ -176,7 +149,7 @@
         </div>
     </section>
 
-<section class="gallery-section">
+    <section class="gallery-section">
         <div class="gallery-container">
             <div class="gallery-left">
                 <div class="gallery-placeholder-box"></div>
@@ -203,4 +176,5 @@
     </section>
 
 </body>
+
 </html>
