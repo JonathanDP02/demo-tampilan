@@ -518,3 +518,165 @@ h1 {
             .mt-up { height: 280px; }
             .card-button-decorator { display: none; }
         }
+
+        /* --- SECTION 6: ACTIVITY SECTION (YOUTUBE EMBED) --- */
+.activity-section {
+    padding: 100px 50px;
+    background-color: #f8f8f8; /* Latar belakang sedikit abu-abu untuk kontras */
+    text-align: center;
+}
+
+.activity-section .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.activity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Jarak antara tombol panah dan kartu video */
+    max-width: 1400px; /* Maksimal lebar untuk kontainer video */
+    margin: 0 auto;
+}
+
+.video-card-wrapper {
+    position: relative;
+    padding: 10px; /* Padding untuk border gradien */
+    border-radius: 40px; /* Bentuk kapsul yang lebih besar */
+    background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Pastikan tidak mengecil pada resolusi kecil */
+    width: 80%; /* Lebar relatif dari kontainer */
+    max-width: 900px; /* Batas lebar maksimal video */
+    height: 0;
+    padding-bottom: 45%; /* Aspek rasio 16:9 (lebar / 16 * 9) */
+    overflow: hidden; /* Sembunyikan overflow */
+}
+
+.video-card {
+    position: absolute;
+    top: 10px; /* Sesuaikan dengan padding wrapper */
+    left: 10px; /* Sesuaikan dengan padding wrapper */
+    right: 10px; /* Sesuaikan dengan padding wrapper */
+    bottom: 10px; /* Sesuaikan dengan padding wrapper */
+    background-color: white; /* Latar belakang putih di dalam border gradien */
+    border-radius: 30px; /* Radius yang lebih kecil dari wrapper */
+    overflow: hidden; /* Penting agar iframe tidak keluar dari border radius */
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Tombol Panah Kiri Kanan */
+.arrow-button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    box-shadow: 0 5px 20px rgba(106, 90, 205, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0; /* Pastikan tombol tidak mengecil */
+}
+
+.arrow-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(106, 90, 205, 0.5);
+}
+
+/* Mobile Responsive untuk Activity Section */
+@media (max-width: 900px) {
+    .activity-section {
+        padding: 60px 20px;
+    }
+
+    .activity-section .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .activity-container {
+        flex-direction: column; /* Tumpuk vertikal di mobile */
+        gap: 40px;
+    }
+
+    .video-card-wrapper {
+        width: 100%; /* Lebar penuh di mobile */
+        padding-bottom: 56.25%; /* Aspek rasio 16:9 untuk video standar */
+    }
+
+    .arrow-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* --- EXTRA NEWS GRID (HIDDEN SECTION) --- */
+
+.more-news-wrapper {
+    margin-top: 60px;
+    width: 100%;
+    animation: slideDown 0.5s ease-out; /* Animasi muncul halus */
+}
+
+/* Grid Layout 3 Kolom x 3 Baris */
+.news-grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Kolom sama besar */
+    gap: 30px; /* Jarak antar kotak */
+    max-width: 1000px;
+    margin: 0 auto 50px auto; /* Margin bawah untuk jarak ke tombol nav */
+    padding: 0 20px;
+}
+
+/* Styling Kotak Abu-abu */
+.grid-news-card {
+    background-color: #C4C4C4; /* Warna abu-abu sesuai referensi gambar */
+    border-radius: 15px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 130%; /* Membuat kotak persegi panjang vertikal (Aspect Ratio) */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.grid-news-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end)); /* Efek hover */
+}
+
+/* Tombol Navigasi di Bawah Grid */
+.grid-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* Jarak jauh antara kiri dan kanan sesuai gambar */
+    margin-top: 20px;
+}
+
+/* Animasi slide ke bawah saat tombol ditekan */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Mobile: Jadi 1 kolom saja */
+@media (max-width: 768px) {
+    .news-grid-3x3 {
+        grid-template-columns: 1fr; /* 1 kolom di HP */
+        gap: 20px;
+    }
+    .grid-nav-buttons {
+        gap: 50px;
+    }
+}
